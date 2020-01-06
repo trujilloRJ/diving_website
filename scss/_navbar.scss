@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   background: rgba($light-color, 0.05);
-  z-index: 1;
+  z-index: 2;
 
   &-brand {
     display: flex;
@@ -23,6 +23,7 @@
   }
 
   ul {
+    //display: none;
     display: flex;
     justify-self: right;
     justify-content: space-evenly;
@@ -37,10 +38,50 @@
         color: $light-color;
         text-transform: uppercase;
         font-weight: 600;
+        transition: all 0.5s ease-out;
+
         &:hover {
           color: $primary-color;
+          letter-spacing: 0.5px;
         }
       }
     }
+  }
+
+  .burguer {
+    display: none;
+    padding: 0.8rem 2rem;
+    justify-self: end;
+    cursor: pointer;
+
+    div {
+      transition: all 0.5s ease-out;
+      width: 25px;
+      height: 0.2rem;
+      background: $primary-color;
+      margin: 5px;
+    }
+
+    &.close {
+      .line1 {
+        transform: translateY(8px) rotate(-45deg);
+      }
+      .line2 {
+        opacity: 0;
+      }
+      .line3 {
+        transform: translateY(-8px) rotate(45deg);
+      }
+    }
+  }
+}
+
+// mobile_screen
+@media (max-width: 600px) {
+  .navbar ul {
+    display: none;
+  }
+  .navbar .burguer {
+    display: block;
   }
 }
