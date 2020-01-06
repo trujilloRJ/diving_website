@@ -1,0 +1,73 @@
+$primary-color: #12cad6;
+$light-color: #f5f0e3;
+
+@import "showcase";
+@import "navbar";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  line-height: 1.5;
+  color: $light-color;
+}
+
+.text-secondary {
+  color: $primary-color;
+}
+
+.bg-headline {
+  font-size: 2rem;
+}
+.lg-headline {
+  font-size: 1.1rem;
+  color: rgba(darken(#fff, 12), 0.7);
+}
+
+#experience {
+  width: 100%;
+  height: 80vh;
+  background: darken($primary-color, 30);
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    height: 100%;
+    margin: auto;
+    padding: 2rem 0;
+
+    p {
+      font-size: 0.9rem;
+      color: rgba(darken(#fff, 12), 0.7);
+    }
+
+    .heading {
+      justify-self: left;
+    }
+
+    .exp-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 3rem;
+
+      .exp-icon {
+        i {
+          padding-bottom: 1rem;
+        }
+        h3 {
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
