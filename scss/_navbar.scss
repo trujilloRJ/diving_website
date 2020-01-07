@@ -55,7 +55,7 @@
     cursor: pointer;
 
     div {
-      transition: all 0.5s ease-out;
+      transition: all 0.2s ease-out;
       width: 25px;
       height: 0.2rem;
       background: $primary-color;
@@ -63,14 +63,16 @@
     }
 
     &.close {
-      .line1 {
+      .line-1 {
         transform: translateY(8px) rotate(-45deg);
+        background: $light-color;
       }
-      .line2 {
+      .line-2 {
         opacity: 0;
       }
-      .line3 {
+      .line-3 {
         transform: translateY(-8px) rotate(45deg);
+        background: $light-color;
       }
     }
   }
