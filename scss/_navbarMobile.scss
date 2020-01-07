@@ -1,37 +1,36 @@
 .mobile-navbar {
-    width: 40%;
-    height: 100vh;
-    position: fixed;
-    transform: translateX(100vw);
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease-out;
-    z-index: 1;
-  
-    &.active {
-      transform: translateX(60vw);
-    }
-  
-    //background: rgba(darken($primary-color, 35), 0.8);
-    background: rgba(darken($ocean-color, 5), 0.4);
-    ul {
-      list-style: none;
-  
-      li {
-        margin: 50px 0;
-        a {
-          font-size: 1.1rem;
-          color: $light-color;
-          text-transform: uppercase;
-          font-weight: 500;
-          transition: all 0.5s ease-out;
-  
-          &:hover {
-            color: $dark-color;
-          }
+  width: 40%;
+  height: 100vh;
+  background: rgba(darken($ocean-color, 5), 0.7);
+  position: fixed;
+  transform: translateX(100vw);
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-out;
+  z-index: 1;
+
+  &.active {
+    transform: translateX(60vw);
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin: 50px 0;
+      a {
+        font-size: 1.1rem;
+        color: $light-color;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+          color: $dark-color;
         }
       }
     }
   }
+}
