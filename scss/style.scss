@@ -26,6 +26,16 @@ body {
   color: $primary-color;
 }
 
+footer {
+  width: 100%;
+  background: darken($ocean-color, 10);
+  display: flex;
+  color: $light-color;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem 0rem 1rem 0rem;
+}
+
 .bg-headline {
   font-size: 2rem;
 }
@@ -88,7 +98,7 @@ body {
 }
 
 #team {
-  background: darken($ocean-color, 15);
+  background: darken($ocean-color, 10);
   width: 100%;
 
   .container {
