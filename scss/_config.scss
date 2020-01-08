@@ -1,0 +1,9 @@
+$primary-color: #00f2ff;
+$ocean-color: #0077be;
+$light-color: #f5f0e3;
+$dark-color: #333;
+$transition-time: 0.5s;
+
+@mixin easeOut {
+  transition: all $transition-time ease-out;
+}
