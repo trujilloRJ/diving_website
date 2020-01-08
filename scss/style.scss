@@ -20,7 +20,6 @@ body {
   line-height: 1.5;
   color: $light-color;
   overflow-x: hidden;
-  @include easeOut;
 }
 
 .text-secondary {
