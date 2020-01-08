@@ -131,9 +131,15 @@ footer {
         width: 130px;
         height: 130px;
         border-radius: 50%;
-        background: url("../img/person.jpg") no-repeat center center/ cover;
         border: 2px solid $primary-color;
         box-shadow: 2px 2px 2px #333;
+
+        &.p1 {
+          background: url("../img/cristian.jpeg") no-repeat center right/ cover;
+        }
+        &.p2 {
+          background: url("../img/person.jpg") no-repeat center right/ cover;
+        }
       }
       p {
         width: 90%;
@@ -146,6 +152,9 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .bg-headline {
+    font-size: 1.9rem;
+  }
   #experience {
     .container {
       .heading {
@@ -155,9 +164,10 @@ footer {
         padding-bottom: 1rem;
       }
       .exp-main {
-        padding-top: 1rem;
+        padding-top: 0rem;
         grid-template-columns: 1fr;
         .exp-icon {
+          padding-top: 1rem;
           align-items: center;
           p {
             text-align: center;

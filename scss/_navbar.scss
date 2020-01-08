@@ -1,6 +1,5 @@
 .navbar {
   position: fixed;
-  height: 50px;
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -15,6 +14,12 @@
     justify-content: left;
     align-items: center;
     padding: 0 1.8rem;
+
+    .logo {
+      width: 55px;
+      height: 40px;
+      background: url(../img/logo_white.png) no-repeat center center/cover;
+    }
 
     a {
       color: $primary-color;
@@ -55,7 +60,7 @@
   // Burguer button for mobile screens
   .burguer {
     display: none;
-    padding: 0rem 2rem;
+    padding: 0.5rem 2rem;
     justify-self: end;
     cursor: pointer;
 
