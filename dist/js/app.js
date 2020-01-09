@@ -4,6 +4,10 @@ const mobileNav = document.querySelector(".mobile-navbar");
 const allCont = document.querySelector(".all-container");
 const navBar = document.querySelector(".navbar");
 const showcase = document.querySelector(".showcase");
+const rkey = document.querySelector(".rkey");
+const lkey = document.querySelector(".lkey");
+const slides = document.querySelector(".slides");
+const slidesList = document.querySelectorAll(".slides .slide");
 
 // burguer menu interaction
 burguerBtn.addEventListener("click", toggleMenu);
@@ -40,3 +44,30 @@ const showcaseObserver = new IntersectionObserver(function(
 },
 options);
 showcaseObserver.observe(showcase);
+
+// slideshow interaction
+let counter = 1;
+const numSlides = slidesList.length;
+const size = slides.offsetWidth / numSlides;
+
+lkey.addEventListener("click", () => {
+  if (counter > 1) {
+    slides.style.transform = "translateX(" + -size * (counter - 2) + "px)";
+    counter--;
+    rkey.style.visibility = "visible";
+  }
+  if (counter == 1) {
+    lkey.style.visibility = "hidden";
+  }
+});
+
+rkey.addEventListener("click", () => {
+  if (counter < numSlides) {
+    slides.style.transform = "translateX(" + -size * counter + "px)";
+    counter++;
+    lkey.style.visibility = "visible";
+  }
+  if (counter == numSlides) {
+    rkey.style.visibility = "hidden";
+  }
+});

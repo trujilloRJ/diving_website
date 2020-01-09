@@ -1,0 +1,54 @@
+.slidershow {
+  position: relative;
+  max-width: 960px;
+  height: 70vh;
+  overflow: hidden;
+  margin: 2rem 0;
+
+  .slides {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    transition: all 400ms ease-out;
+    .slide {
+      height: 100%;
+      width: 100%;
+      &.p1 {
+        background: url("../img/1.jpeg") no-repeat center/cover;
+      }
+      &.p2 {
+        background: url("../img/2.jpeg") no-repeat center/cover;
+      }
+      &.p3 {
+        background: url("../img/3.jpeg") no-repeat center/cover;
+      }
+    }
+  }
+
+  .navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem;
+
+    .lkey {
+      width: 50%;
+    }
+
+    .rkey {
+      width: 50%;
+      text-align: right;
+    }
+
+    i {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  input[name="r"] {
+    display: none;
+  }
+}
