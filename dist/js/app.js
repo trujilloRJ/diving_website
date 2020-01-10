@@ -48,9 +48,9 @@ showcaseObserver.observe(showcase);
 // slideshow interaction
 let counter = 1;
 const numSlides = slidesList.length;
-const size = slides.offsetWidth / numSlides;
 
 lkey.addEventListener("click", () => {
+  const size = slides.offsetWidth / numSlides;
   if (counter > 1) {
     slides.style.transform = "translateX(" + -size * (counter - 2) + "px)";
     counter--;
@@ -62,6 +62,7 @@ lkey.addEventListener("click", () => {
 });
 
 rkey.addEventListener("click", () => {
+  const size = slides.offsetWidth / numSlides;
   if (counter < numSlides) {
     slides.style.transform = "translateX(" + -size * counter + "px)";
     counter++;
