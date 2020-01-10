@@ -17,7 +17,7 @@ a {
 
 body {
   font-size: 1rem;
-  font-family: "Open Sans", "sans-serif";
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   line-height: 1.5;
   color: $light-color;
@@ -215,6 +215,10 @@ body {
         border-bottom: solid 1px #fff;
         border-left: none;
         padding-bottom: 1rem;
+      }
+      .slide-caption {
+        font-size: 1.4rem;
+        font-weight: 600;
       }
     }
   }

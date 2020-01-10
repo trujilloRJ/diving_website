@@ -8,9 +8,13 @@ const rkey = document.querySelector(".rkey");
 const lkey = document.querySelector(".lkey");
 const slides = document.querySelector(".slides");
 const slidesList = document.querySelectorAll(".slides .slide");
+const mobileBtns = document.querySelectorAll(".mob");
 
 // burguer menu interaction
 burguerBtn.addEventListener("click", toggleMenu);
+mobileBtns.forEach(btn => {
+  btn.addEventListener("click", toggleMenu);
+});
 let showMenu = false;
 function toggleMenu() {
   if (!showMenu) {
@@ -48,9 +52,15 @@ showcaseObserver.observe(showcase);
 // slideshow interaction
 let counter = 1;
 const numSlides = slidesList.length;
-
+let size = slides.offsetWidth / numSlides;
+window.addEventListener("resize", () => {
+  size = slides.offsetWidth / numSlides;
+  counter = 1;
+  slides.style.transform = "translateX(0px)";
+  lkey.style.visibility = "hidden";
+  rkey.style.visibility = "visible";
+});
 lkey.addEventListener("click", () => {
-  const size = slides.offsetWidth / numSlides;
   if (counter > 1) {
     slides.style.transform = "translateX(" + -size * (counter - 2) + "px)";
     counter--;
@@ -62,7 +72,6 @@ lkey.addEventListener("click", () => {
 });
 
 rkey.addEventListener("click", () => {
-  const size = slides.offsetWidth / numSlides;
   if (counter < numSlides) {
     slides.style.transform = "translateX(" + -size * counter + "px)";
     counter++;
