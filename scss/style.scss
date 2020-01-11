@@ -13,6 +13,7 @@
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 body {
@@ -40,6 +41,26 @@ body {
   @include easeOut;
   &.shift {
     transform: translateX(-37vw);
+  }
+}
+
+.btn {
+  background: $ocean-color;
+  background: transparent;
+  border: 2px solid #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  @include easeOut;
+
+  &.plain {
+    display: inline;
+  }
+  &:hover {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: #333;
   }
 }
 
@@ -149,7 +170,7 @@ body {
   padding: 2rem 0;
 
   .container {
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     margin: auto;
   }
@@ -161,8 +182,38 @@ body {
     padding-left: 1rem;
     margin-bottom: 1rem;
   }
+
+  .btn {
+    padding: 0;
+    text-align: center;
+    margin: auto;
+    width: 150px;
+    padding: 0.5rem;
+  }
 }
 
+#book {
+  width: 100%;
+  background: darken($ocean-color, 12);
+  padding: 2rem 0rem;
+
+  .container {
+    width: 90%;
+    max-width: $max-width;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      border-left: solid 1px #fff;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
 // media mobile
 @media (max-width: 600px) {
   .bg-headline {
@@ -219,6 +270,17 @@ body {
       .slide-caption {
         font-size: 1.4rem;
         font-weight: 600;
+      }
+    }
+  }
+
+  #book {
+    .container {
+      .heading {
+        align-items: center;
+        border-bottom: solid 1px #fff;
+        border-left: none;
+        padding-bottom: 1rem;
       }
     }
   }
