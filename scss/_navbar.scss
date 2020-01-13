@@ -95,6 +95,9 @@
 
 // mobile_screen
 @media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 0rem;
+  }
   .navbar ul {
     display: none;
   }
