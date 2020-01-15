@@ -3,4 +3,4 @@ Disallow: /cgi-bin/
 Disallow: /img/
 Disallow: /js/
 Disallow: /css/
-Sitemap: http://example.com/sitemap_location.xml
+Sitemap: http://example.com/sitemap.xml
