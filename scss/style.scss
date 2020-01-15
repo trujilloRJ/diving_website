@@ -56,7 +56,7 @@ body {
   @include easeOut;
 
   &.plain {
-    display: inline;
+    margin-top: 5rem;
   }
   &:hover {
     background: $primary-color;

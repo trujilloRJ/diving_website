@@ -24,6 +24,10 @@ $overlay-color: #000;
     align-items: center;
     text-align: center;
 
+    .btn-container {
+      margin-top: 3rem;
+    }
+
     .social-contact {
       display: flex;
       justify-self: center;
