@@ -273,7 +273,32 @@
               Book <span class="text-secondary">now!</span>
             </h1>
           </div>
-          <div
+          <form class="form" id="form">
+            <div class="form-control">
+              <lable>Name</lable>
+              <input type="text" id='name'>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <lable>Number of people</lable>
+              <input type="number" id='num_people' min='1' max='100'>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <lable>Date</lable>
+              <input type="date" id='date'>
+              <small>Error message</small>
+            </div>
+            <div class="form-button">
+              <button><i class="fab fa-whatsapp"></i> Book Now</button>
+            </div>
+          </form>
+          <!-- AIRBNB -->
+          <!-- <div
             class="airbnb-embed-frame"
             data-id="471151"
             data-view="experience_booking"
@@ -291,7 +316,7 @@
               async=""
               src="https://www.airbnb.com/embeddable/airbnb_jssdk"
             ></script>
-          </div>
+          </div> -->
         </div>
       </section>
 

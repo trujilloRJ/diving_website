@@ -9,6 +9,12 @@ const lkey = document.querySelector(".lkey");
 const slides = document.querySelector(".slides");
 const slidesList = document.querySelectorAll(".slides .slide");
 const mobileBtns = document.querySelectorAll(".mob");
+// fomr variables
+const form = document.getElementById('form');
+const user_name = document.getElementById('name');
+const num_people = document.getElementById('num_people');
+const date = document.getElementById('date');
+
 
 // burguer menu interaction
 burguerBtn.addEventListener("click", toggleMenu);
@@ -81,3 +87,65 @@ rkey.addEventListener("click", () => {
     rkey.style.visibility = "hidden";
   }
 });
+
+// FORM
+form.addEventListener('submit', (e)=>{
+  e.preventDefault()
+  const isValid = checkInputs()
+
+  if (isValid){
+    // send whatsapp
+    // https://wa.me/whatsappphonenumber?text=urlencodedtext
+    const phoneNumber = 5353759414
+    const text = `Hi!%20I%20am%20${user_name.value}.%20I%20want%20to%20book%20a%20dive%20trip%20for%20${num_people.value}%20on%20the%20${date.value}.%20Please%20let%20know%20if%20it's%20possible%20.%20Thank%20very%20much!`
+    window.location.href = `https://wa.me/${phoneNumber}?text=${text}`
+  }
+})
+
+function checkInputs(){
+  const nameValue = user_name.value.trim()
+  const num_peopleValue = num_people.value
+  const dateValue = new Date(date.value)
+  const today = new Date()
+  const isValid = true
+
+  if(nameValue===''){
+    setErrorFor(user_name, 'Your name is required')
+    isValid = false
+  } else {
+    setSuccesFor(user_name)
+  }
+
+  if(num_peopleValue > 8 ){
+    setErrorFor(num_people, 'It should be less than 8 people')
+    isValid = false
+  }
+  else if(num_peopleValue < 1){
+    setErrorFor(num_people, 'The number of people is required')
+    isValid = false
+  }
+  else {
+    setSuccesFor(num_people)
+  }
+
+  if(dateValue <= today){
+    setErrorFor(date, 'Please select a valid date')
+    isValid = false
+  }
+  else{
+    setSuccesFor(date)
+  }
+  return isValid
+}
+
+function setErrorFor(input, msg){
+  const formControl = input.parentElement;
+  const small = formControl.querySelector('small')
+  small.innerText = msg;
+  formControl.className = 'form-control error'
+}
+
+function setSuccesFor(input){
+  const formControl = input.parentElement;
+  formControl.className = 'form-control success'
+}
